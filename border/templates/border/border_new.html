@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block container %}
+<center>
+    <br>
+    <h2>New History</h2>
+    <br>
+    <form action="{% url 'writing' %}"method="POST" class="border-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-warning">Save</button>
+    </form>
+</center>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+
+{% block title %}
+    <title>border_detail</title>
+{% endblock %}
+
+
+{% block container %}
+<center>
+    <div class="container">
+        <div class="page-header">
+            <h1>{{border.title}}</h1>
+        </div>
+        <p>author: {{border.author}} </p>
+        <p>text: {{border.text}} </p>
+    </div>
+</center>
+<div class="col-md-2 float-right">
+    <a href="{% url 'delete' pk=border.id %}" class="btn btn-danger">Delete</a>
+    <a href="{% url 'modify' pk=border.id %}" class="btn btn-success">Modify</a>
+</div>
+
+{% endblock %}
+
