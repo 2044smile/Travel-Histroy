@@ -8,17 +8,21 @@
 {% block container %}
 <center>
     <div class="container">
-        <div class="page-header">
-            <h1>{{border.title}}</h1>
+      <div class="row justify-content-center">
+        <div class="col-8">
+          <h1 class="mt-2">{{border.title}}</h1>
+          <hr class="mt-0 mb-4">
+            <p>author: {{border.author}} </p>
+            <p>text: {{border.text}} </p>
+            <div class="col-md-3 float-right">
+                <a href="{% url 'delete' pk=border.id %}" class="btn btn-danger">Delete</a>
+                <a href="{% url 'modify' pk=border.id %}" class="btn btn-success">Modify</a>
+            </div>
         </div>
-        <p>author: {{border.author}} </p>
-        <p>text: {{border.text}} </p>
+      </div>
     </div>
 </center>
-<div class="col-md-2 float-right">
-    <a href="{% url 'delete' pk=border.id %}" class="btn btn-danger">Delete</a>
-    <a href="{% url 'modify' pk=border.id %}" class="btn btn-success">Modify</a>
-</div>
+
 
 {% endblock %}
 

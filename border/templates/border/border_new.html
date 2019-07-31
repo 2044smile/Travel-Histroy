@@ -1,14 +1,20 @@
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
 {% block container %}
 <center>
-    <br>
-    <h2>New History</h2>
-    <br>
-    <form action="{% url 'writing' %}"method="POST" class="border-form">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-warning">Save</button>
-    </form>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-8">
+          <h1 class="mt-2">Modify Page</h1>
+          <hr class="mt-0 mb-4">
+            <form action="{% url 'writing' %}"method="POST" class="border-form" novalidate>
+                {% csrf_token %}
+                {{ form|crispy }}
+                <br>
+                <button type="submit" class="save btn btn-warning">Save</button>
+            </form>
+        </div>
+      </div>
+    </div>
 </center>
 {% endblock %}

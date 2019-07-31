@@ -7,6 +7,7 @@ from .forms import BorderForm
 from django.views.generic.edit import DeleteView, UpdateView
 from django.views.generic.detail import DetailView
 from django.urls import reverse_lazy
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def index(request):
     return render(request, 'border/index.html')
@@ -14,6 +15,7 @@ def index(request):
 def border(request):
     br = Border.objects.all()
     context = {'title':br}
+
     return render(request, 'border/border.html', context)
 
 def border_new(request):
