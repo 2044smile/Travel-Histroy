@@ -40,7 +40,11 @@
             <input type="text" class="form-control" placeholder="Username" name="username"><br>
             <input type="password" class="form-control" placeholder="Password" name="password">
         </div>
+        {% if error %}
+        <p style="color:red">{{error}}</p>
+        {% endif %}
         <input type="submit" class="btn btn-primary btn-block" value="Login">
     </form>
+
 </div>
 {% endblock %}

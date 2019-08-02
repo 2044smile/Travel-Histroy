@@ -41,6 +41,9 @@
             <input type="password" class="form-control" placeholder="Password" name="password1">
             <input type="password" class="form-control" placeholder="check Password" name="password2">
         </div>
+        {% if error %}
+        <p style="color:red">{{error}}</p>
+        {% endif %}
         <input type="submit" class="btn btn-primary btn-block" value="register">
     </form>
 </div>

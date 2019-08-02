@@ -1,22 +1,35 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from datetime import timezone
 from django.shortcuts import redirect
-from .models import Border
-from .forms import BorderForm
 from django.views.generic.edit import DeleteView, UpdateView
 from django.views.generic.detail import DetailView
 from django.urls import reverse_lazy
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
+from .models import Border
+from .forms import BorderForm
+
 def index(request):
     return render(request, 'border/index.html')
 
 def border(request):
-    br = Border.objects.all()
-    context = {'title':br}
+    borders = Border.objects.all()
 
-    return render(request, 'border/border.html', context)
+    paginator = Paginator(borders, 10) # page 10개 제한
+
+    page = request.GET.get('page')  # ?page=1
+
+    try:
+        borders = paginator.page(page)
+    except PageNotAnInteger:
+        borders = paginator.page(1)
+    except EmptyPage:
+        borders = paginator.page(paginator.num_pages)
+
+    return render(request, 'border/border.html', {'border':borders})
+
+
+
 
 def border_new(request):
     if request.method == "POST":

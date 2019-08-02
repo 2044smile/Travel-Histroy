@@ -4,6 +4,14 @@
     <title>border</title>
 {% endblock %}
 
+{% block nav%}
+<style>
+.pagination {
+   justify-content: center;
+}
+</style>
+{% endblock %}
+
 {% block container %}
 <center><h1>border</h1></center>
 <table class="table table-striped">
@@ -18,16 +26,25 @@
         </tr>
     </thead>
     <tbody>
-      {% for border in title %}
+      {% for post in border %}
             <tr>
                 <th scope="row"></th>
-                <td>{{forloop.counter}}</td>
-                <td><a href="{% url 'detail' pk=border.id %}">{{border.title}}</a></td>
-                <td>{{border.author}}</td>
-                <td>{{border.text}}</td>
-                <td><img src="border/static/border/singapore.jpg" alt="">singapore</td>
+                <td>{{forloop.counter0|add:border.start_index }}</td>
+                <td><a href="{% url 'detail' pk=post.id %}">{{post.title}}</a></td>
+                <td>{{post.author}}</td>
+                <td>{{post.text}}</td>
+                <td>{{post.photo}}</td>
             </tr>
      {% endfor %}
     </tbody>
 </table>
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="{{ border.previous_page_number }}">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="{{ border.next_page_number }}">Next</a></li>
+  </ul>
+</nav>
 {% endblock %}
