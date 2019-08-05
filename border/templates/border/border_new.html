@@ -1,20 +1,49 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
+
+{% block nav %}
+<style type="text/css">
+	.posts-form {
+		width: 340px;
+    	margin: 0px auto;
+	}
+    .posts-form form {
+    	margin-bottom: 15px;
+        background: #f7f7f7;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+    .posts-form h2 {
+        margin: 0 0 15px;
+    }
+    .form-control, .btn {
+        min-height: 38px;
+        border-radius: 2px;
+    }
+    .btn {
+        font-size: 15px;
+        font-weight: bold;
+    }
+    textarea {
+        padding-top:6px;
+        padding-left:8px;
+    }
+</style>
+{% endblock %}
+
 {% block container %}
-<center>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-8">
-          <h1 class="mt-2">Writing Page</h1>
-          <hr class="mt-0 mb-4">
-            <form action="{% url 'writing' %}"method="POST" class="border-form" novalidate>
-                {% csrf_token %}
-                {{ form|crispy }}
-                <br>
-                <button type="submit" class="save btn btn-warning">Save</button>
-            </form>
+
+<div class="posts-form">
+    <form action="" method="post">
+        {% csrf_token %}
+        <h2 class="text-center">New posts</h2><br>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Title" name="title"><br>
+            <input type="text" class="form-control" placeholder="Author" name="author"><br>
+            <textarea name="text" cols="40" rows="8" placeholder="Please enter your details." style="width:280px"></textarea>
+<!--            <input type="text" class="form-control" placeholder="Please enter your details." name="text" style="width:280px;height:300px">-->
         </div>
-      </div>
-    </div>
-</center>
+        <input type="submit" class="btn btn-primary btn-block" value="Save">
+    </form>
+</div>
 {% endblock %}

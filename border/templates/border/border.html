@@ -29,22 +29,53 @@
       {% for post in border %}
             <tr>
                 <th scope="row"></th>
-                <td>{{forloop.counter0|add:border.start_index }}</td>
+                <td>{{forloop.counter }}</td>
                 <td><a href="{% url 'detail' pk=post.id %}">{{post.title}}</a></td>
                 <td>{{post.author}}</td>
                 <td>{{post.text}}</td>
                 <td>{{post.photo}}</td>
+                <td>{{post.number}}</td>
             </tr>
      {% endfor %}
     </tbody>
 </table>
-<nav aria-label="Page navigation example">
-  <ul class="pagination">
-    <li class="page-item"><a class="page-link" href="{{ border.previous_page_number }}">Previous</a></li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="{{ border.next_page_number }}">Next</a></li>
-  </ul>
-</nav>
+{% if is_paginated %}
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      {% if page_obj.has_previous %}
+        <li>
+          <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+            <span>Prev</span>
+          </a>
+        </li>
+      {% else %}
+        <li class="page-item">
+          <a href="#" class="page-link">
+            <span>Previous</span>
+          </a>
+        </li>
+      {% endif %}
+
+      {% for page in page_range %}
+        <li class="page-item" {% if page == page_obj.number %}class="active"{% endif %}>
+          <a class="page-link" href="?page={{ page }}">{{ page }}</a>
+        </li>
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+            <span>Next</span>
+          </a>
+        </li>
+      {% else %}
+        <li class="page-item" {% if not page_obj.has_next %}class="disabled"{% endif %}>
+          <a class="page-link" href="#">
+            <span>Next</span>
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+{% endif %}
 {% endblock %}

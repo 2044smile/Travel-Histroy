@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
+from django.views.generic import ListView
 from django.views.generic.edit import DeleteView, UpdateView
 from django.views.generic.detail import DetailView
 from django.urls import reverse_lazy
@@ -12,23 +13,29 @@ from .forms import BorderForm
 def index(request):
     return render(request, 'border/index.html')
 
-def border(request):
-    borders = Border.objects.all()
+class borderListView(ListView):
+    model = Border
+    template_name = 'border/border.html'
+    context_object_name = 'border'
+    paginate_by = 10
 
-    paginator = Paginator(borders, 10) # page 10개 제한
+    def get_context_data(self, **kwargs):
+        context = super(borderListView, self).get_context_data(**kwargs)
+        paginator = context['paginator']
+        page_numbers_range = 5  # Display only 5 page numbers
+        max_index = len(paginator.page_range)
 
-    page = request.GET.get('page')  # ?page=1
+        page = self.request.GET.get('page')
+        current_page = int(page) if page else 1
 
-    try:
-        borders = paginator.page(page)
-    except PageNotAnInteger:
-        borders = paginator.page(1)
-    except EmptyPage:
-        borders = paginator.page(paginator.num_pages)
+        start_index = int((current_page - 1) / page_numbers_range) * page_numbers_range
+        end_index = start_index + page_numbers_range
+        if end_index >= max_index:
+            end_index = max_index
 
-    return render(request, 'border/border.html', {'border':borders})
-
-
+        page_range = paginator.page_range[start_index:end_index]
+        context['page_range'] = page_range
+        return context
 
 
 def border_new(request):
@@ -38,7 +45,7 @@ def border_new(request):
             post = form.save(commit=False)
             post.save() # db에 저장
             return redirect('/border')
-        return HttpResponse('fail')
+        return HttpResponse('모두 다 입력하였는지 확인해주세요.')
     elif request.method == 'GET':
         form = BorderForm()
         return render(request, 'border/border_new.html', {'form': form})
