@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d3de4ad-4d11-44ea-929f-c74e6b90fd9a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/border/static/FerrariF8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/border/static/singapore.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/border/static/singapore2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/border/static/singapore3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/border/static/singapore4.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/templates/registration/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/registration/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/border/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/border/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/border/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/border/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/border/templates/border/border.html" beforeDir="false" afterPath="$PROJECT_DIR$/border/templates/border/border.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/border/templates/border/border_new.html" beforeDir="false" afterPath="$PROJECT_DIR$/border/templates/border/border_new.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/border/static/FerrariF8.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/border/templates/border/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/border/templates/border/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/border/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/border/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/border/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/border/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/photo/singapore.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,15 +32,15 @@
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/border/static/tokyo3.jpg" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\smil2\PycharmProjects\Travel-Histroy-master\border\templates\border" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Family\PycharmProjects\Travel-Histroy\border\static" />
       <recent name="C:\Users\smil2\PycharmProjects\Travel-Histroy-master\border\static" />
       <recent name="C:\Users\smil2\PycharmProjects\Travel-Histroy-master\border\static\images" />
       <recent name="C:\Users\smil2\PycharmProjects\Travel-Histroy-master\static\photo" />
       <recent name="C:\Users\smil2\PycharmProjects\Travel-Histroy-master\border\static\border\photo" />
-      <recent name="C:\Users\smil2\PycharmProjects\Travel-Histroy-master\border\static\border" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\smil2\PycharmProjects\Travel-Histroy-master\border\templates\border" />
     </key>
   </component>
   <component name="RunDashboard">
