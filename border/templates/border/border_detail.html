@@ -4,25 +4,68 @@
     <title>border_detail</title>
 {% endblock %}
 
+{% block nav %}
+
+<style type="text/css">
+	.login-form {
+		width: 500px;
+    	margin: 0px auto;
+	}
+    .login-form form {
+    	margin-bottom: 15px;
+        background: #f7f7f7;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+    .login-form h2 {
+        margin: 0 0 15px;
+    }
+    .form-control, .btn {
+        min-height: 38px;
+        border-radius: 2px;
+    }
+    .btn {
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .text {
+        padding-bottom: 5px;
+        padding-left: 5px;
+        margin-bottom: 15px;
+        border-style: solid;
+        border-color: #d3d3d3;
+        background: #f7f7f7;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    }
+    .center-block {
+      display: block;
+      margin-left: 200PX;
+      margin-right: 200PX;
+    }
+</style>
+{% endblock %}
 
 {% block container %}
-<center>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-8">
-          <h1 class="mt-2">{{border.title}}</h1>
-          <hr class="mt-0 mb-4">
-            <p>author: {{border.author}} </p>
-            <p>text: {{border.text}} </p>
-            <div class="col-md-3 float-right">
-                <a href="{% url 'delete' pk=border.id %}" class="btn btn-danger">Delete</a>
-                <a href="{% url 'modify' pk=border.id %}" class="btn btn-success">Modify</a>
-            </div>
+<div class="login-form">
+    <form action="" method="post">
+        {% csrf_token %}
+        <h2 class="text-center text">{{ object.title }}</h2>
+        <h3 class="text-center text">Author : {{ object.author}}</h3>
+        <div class="text">
+            {{object.text}}
         </div>
-      </div>
-    </div>
-</center>
+        {% if error %}
+        <p style="color:red">{{error}}</p>
+        {% endif %}
+        <a href="{% url 'delete' pk=border.id %}" class="btn btn-danger btn-block">Delete</a>
+        <a href="{% url 'modify' pk=border.id %}" class="btn btn-success btn-block">Modify</a>
+    </form>
 
+</div>
+<div class="center-block">
+     {% load disqus_tags %}
+     {% disqus_show_comments %}
+</div>
 
 {% endblock %}
 

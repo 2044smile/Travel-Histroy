@@ -1,3 +1,5 @@
+from urllib import request
+
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
@@ -12,6 +14,19 @@ from .forms import BorderForm
 
 def index(request):
     return render(request, 'border/index.html')
+
+# ing
+def border_search(request):
+    br = Border.objects.all()
+    b = request.GET.get('b','')
+
+    if b:
+        brs = br.filter(title__iconains=b)
+
+    return render(request, 'border/border.html',{
+        'border' : brs,
+        'b' : b
+    })
 
 class borderListView(ListView):
     model = Border

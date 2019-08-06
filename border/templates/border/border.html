@@ -6,14 +6,15 @@
 
 {% block nav%}
 <style>
-.pagination {
-   justify-content: center;
-}
+    .pagination {
+       justify-content: center;
+    }
 </style>
 {% endblock %}
 
 {% block container %}
 <center><h1>border</h1></center>
+<div class="bordertable">
 <table class="table table-striped">
     <thead>
         <tr>
@@ -35,10 +36,14 @@
                 <td>{{post.text}}</td>
                 <td>{{post.photo}}</td>
                 <td>{{post.number}}</td>
+                {% if b %}
+                ㅅㅅㅅ
+                {% endif %}
             </tr>
      {% endfor %}
     </tbody>
 </table>
+</div>
 {% if is_paginated %}
   <nav aria-label="Page navigation example">
     <ul class="pagination">

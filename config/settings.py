@@ -41,7 +41,12 @@ INSTALLED_APPS = [
     'border',
     'crispy_forms',
     'accounts',
+    'django.contrib.sites',
+    'disqus',
 ]
+
+DISQUS_WEBSITE_SHORTNAME = 'travel'
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -123,3 +128,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
+

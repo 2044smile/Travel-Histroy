@@ -2,13 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d3de4ad-4d11-44ea-929f-c74e6b90fd9a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/border/static/singapore.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/border/static/singapore2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/border/static/singapore3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/border/static/singapore4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/disqus/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/disqus/api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/disqus/management/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/disqus/management/commands/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/disqus/management/commands/disqus_dumpdata.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/disqus/management/commands/disqus_export.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/disqus/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/disqus/templates/disqus/disqus_dev.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/disqus/templates/disqus/disqus_sso.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/disqus/templates/disqus/num_replies.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/disqus/templates/disqus/recent_comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/disqus/templates/disqus/show_comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/disqus/templatetags/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/disqus/templatetags/disqus_tags.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/disqus/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/disqus/wxr_feed.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/django_disqus-0.5-py3.7.egg-info/PKG-INFO" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/django_disqus-0.5-py3.7.egg-info/SOURCES.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/django_disqus-0.5-py3.7.egg-info/dependency_links.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/django_disqus-0.5-py3.7.egg-info/installed-files.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/django_disqus-0.5-py3.7.egg-info/not-zip-safe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/django_disqus-0.5-py3.7.egg-info/requires.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/django_disqus-0.5-py3.7.egg-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/mock-3.0.5.dist-info/INSTALLER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/mock-3.0.5.dist-info/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/mock-3.0.5.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/mock-3.0.5.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/mock-3.0.5.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/mock-3.0.5.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/mock/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/mock/mock.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/six-1.12.0.dist-info/INSTALLER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/six-1.12.0.dist-info/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/six-1.12.0.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/six-1.12.0.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/six-1.12.0.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/six-1.12.0.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myvenv/Lib/site-packages/six.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/border/static/FerrariF8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/border/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/border/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/border/templates/border/border.html" beforeDir="false" afterPath="$PROJECT_DIR$/border/templates/border/border.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/border/templates/border/border_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/border/templates/border/border_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/border/templates/border/border_modify.html" beforeDir="false" afterPath="$PROJECT_DIR$/border/templates/border/border_modify.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/border/templates/border/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/border/templates/border/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/border/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/border/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +67,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/border/static/tokyo3.jpg" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/border/static/tokyo3.jpg" />
   </component>
   <component name="RecentsManager">

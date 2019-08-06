@@ -1,23 +1,88 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% block title %}
-    <title>border_confirm_delete</title>
+<title>border_confirm_delete</title>
 {% endblock %}
+
+{% block nav %}
+<style type="text/css">
+    .posts-form {
+        width: 340px;
+        margin: 0px auto;
+    }
+
+    .posts-form form {
+        margin-bottom: 15px;
+        background: #f7f7f7;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+
+    .posts-form h2 {
+        margin: 0 0 15px;
+    }
+
+    .control-group, .btn {
+        min-height: 38px;
+        border-radius: 2px;
+    }
+
+    .btn {
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    textarea {
+        padding-top: 6px;
+        padding-left: 8px;
+    }
+</style>
+{% endblock %}
+
 {% block container %}
-<center>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-8">
-          <h1 class="mt-2">Modify Page</h1>
-          <hr class="mt-0 mb-4">
-            <form action="" method="post" novalidate>
-                {% csrf_token %}
-                {{ form|crispy }}
+<div class="posts-form">
+    <form action="" method="post" novalidate>
+        {% csrf_token %}
+        <h2 class="text-center">Modify posts</h2><br>
+        <div class="posts-form">
+            <div id="div_id_title" class="control-group"><label for="id_title" class="control-label requiredField">
+                Title<span class="asteriskField"></span> </label>
+                <div class="controls"><input type="text" name="title" value="Singapore" maxlength="100"
+                                             class="textinput textInput" required="" id="id_title" style="width: 280px"></div>
+            </div>
+            <div id="div_id_author" class="control-group"><label for="id_author" class="control-label requiredField">
+                Author<span class="asteriskField"></span> </label>
+                <div class="controls"><input type="text" name="author" value="2044smile" maxlength="30"
+                                             class="textinput textInput" required="" id="id_author" style="width: 280px"></div>
+            </div>
+            <div id="div_id_text" class="control-group"><label for="id_text" class="control-label requiredField">
+                Text<span class="asteriskField"></span> </label>
+                <div class="controls"><textarea name="text" cols="40" rows="10" maxlength="500" class="textarea"
+                                                required="" id="id_text"  style="width: 280px">즐거운 싱가포르 여행이였어요. ddddddddddddddㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</textarea>
+                </div>
                 <br>
-                <input type="submit" value="Save" class="save btn btn-warning">
-            </form>
+            </div>
+
         </div>
-      </div>
-    </div>
-</center>
-{% endblock%}
+        <input type="submit" class="btn btn-primary btn-block" value="Save">
+    </form>
+</div>
+{% endblock %}
+
+
+<!--<center>-->
+<!--    <div class="container">-->
+<!--      <div class="row justify-content-center">-->
+<!--        <div class="col-8">-->
+<!--          <h1 class="mt-2">Modify Page</h1>-->
+<!--          <hr class="mt-0 mb-4">-->
+<!--            <form action="" method="post" novalidate>-->
+<!--                {% csrf_token %}-->
+<!--                {{ form|crispy }}-->
+<!--                <br>-->
+<!--                <input type="submit" value="Save" class="save btn btn-warning">-->
+<!--            </form>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--</center>-->

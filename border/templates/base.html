@@ -7,8 +7,13 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
        {% block head %}
-        {% endblock %}
-
+       {% endblock %}
+       <style>
+           .footer{
+               padding-left: 200px;
+               padding-right: 200px;
+           }
+       </style>
     {% block title %}
     {% endblock%}
     <nav class="navbar navbar-dark bg-dark">
@@ -43,8 +48,8 @@
                 </div>
             </li>
         </ul>
-        <form class="form-inline my-2 my-md-0">
-          <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+        <form class="form-inline my-2 my-md-0" method="get">
+          <input class="form-control" type="text" placeholder="Search" aria-label="Search" value="{{ b }}" name="b">
         </form>
       </div>
     {% block nav %}
@@ -59,7 +64,7 @@
     {% block footer %}
 
   <!-- Copyright -->
-    <footer style="">
+    <footer class="footer">
       <div class="footer-copyright text-center py-3">copyright is the exclusive right, given to the creator of a work, to reproduce the work, usually for a limited time. Copyright protects the original expression of an idea in the form of a creative work, but not the idea itself. A copyright is subject to limitations based on public interest considerations, such as the fair use doctrine in the United States.
         <a href="https://newbiecs.tistory.com/"> © 2019 Copyright:In law, </a>
       </div>
