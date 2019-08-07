@@ -1,5 +1,3 @@
-from urllib import request
-
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
@@ -7,7 +5,6 @@ from django.views.generic import ListView
 from django.views.generic.edit import DeleteView, UpdateView
 from django.views.generic.detail import DetailView
 from django.urls import reverse_lazy
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from .models import Border
 from .forms import BorderForm
@@ -15,18 +12,16 @@ from .forms import BorderForm
 def index(request):
     return render(request, 'border/index.html')
 
-# ing
 def border_search(request):
     br = Border.objects.all()
+
     b = request.GET.get('b','')
 
     if b:
-        brs = br.filter(title__iconains=b)
+        br = br.filter(title__icontains=b)
 
-    return render(request, 'border/border.html',{
-        'border' : brs,
-        'b' : b
-    })
+    return render(request, 'border/border_search.html', { 'border_search':br , 'b':b})
+
 
 class borderListView(ListView):
     model = Border
@@ -82,3 +77,6 @@ class BorderUpdateView(UpdateView):
 
 class BorderDetailView(DetailView):
     model = Border
+
+def test(request):
+    return render(request, 'test.html')

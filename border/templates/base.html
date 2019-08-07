@@ -48,8 +48,8 @@
                 </div>
             </li>
         </ul>
-        <form class="form-inline my-2 my-md-0" method="get">
-          <input class="form-control" type="text" placeholder="Search" aria-label="Search" value="{{ b }}" name="b">
+        <form class="form-inline my-2 my-md-0" method="get" action="{% url 'search' %}">
+          <input class="form-control" type="text" placeholder="Search" aria-label="Search" name="b" value="{{b}}">
         </form>
       </div>
     {% block nav %}
@@ -59,7 +59,49 @@
 
     {% block container %}
 
-    {% endblock%}
+    {% endblock %}
+
+       {% block page%}
+       {% if is_paginated %}
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      {% if page_obj.has_previous %}
+        <li>
+          <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+            <span>Prev</span>
+          </a>
+        </li>
+      {% else %}
+        <li class="page-item">
+          <a href="#" class="page-link">
+            <span>Previous</span>
+          </a>
+        </li>
+      {% endif %}
+
+      {% for page in page_range %}
+        <li class="page-item" {% if page == page_obj.number %}class="active"{% endif %}>
+          <a class="page-link" href="?page={{ page }}">{{ page }}</a>
+        </li>
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+            <span>Next</span>
+          </a>
+        </li>
+      {% else %}
+        <li class="page-item" {% if not page_obj.has_next %}class="disabled"{% endif %}>
+          <a class="page-link" href="#">
+            <span>Next</span>
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+{% endif %}
+       {% endblock %}
 
     {% block footer %}
 

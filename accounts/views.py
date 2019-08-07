@@ -1,22 +1,19 @@
 from django.shortcuts import render
 from .forms import LoginForm, registerForm
-# Django 회원가입 구현 지원
-from django.contrib.auth.models import User
 from django.contrib import auth
-from django.http import HttpResponseRedirect, HttpResponse
-from django.template import RequestContext
-from border import models
+from border.models import Border
+
 
 def login(request):
-    br = models.Border.objects.all()
-    context = {'title':br}
+    br = Border.objects.all()
+    context = {'border':br}
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["password"]
         user = auth.authenticate(request, username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            return render(request, 'border/border.html',context)
+            return render(request, 'border/border.html', context)
         else:
             return render(request, 'registration/login.html', {'error': 'username or password is incorrect'})
     else:
