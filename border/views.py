@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView
 from django.views.generic.edit import DeleteView, UpdateView
 from django.views.generic.detail import DetailView
 from django.urls import reverse_lazy
@@ -48,22 +48,25 @@ class borderListView(ListView):
         return context
 
 
-def border_new(request):
-    if request.method == "POST":
-        form = BorderForm(request.POST) # form 으로 넘겨받은 데이터를 받는다.
-        if form.is_valid(): # form 의 데이터가 올바른지 1차적으로 확인
-            post = form.save(commit=False)
-            post.save() # db에 저장
-            return redirect('/border')
-        return HttpResponse('모두 다 입력하였는지 확인해주세요.')
-    elif request.method == 'GET':
-        form = BorderForm()
-        return render(request, 'border/border_new.html', {'form': form})
-    else:
-        pass
+# def border_new(request):
+#     if request.method == "POST":
+#         form = BorderForm(request.POST) # form 으로 넘겨받은 데이터를 받는다.
+#         if form.is_valid(): # form 의 데이터가 올바른지 1차적으로 확인
+#             post = form.save(commit=False)
+#             post.save() # db에 저장
+#             return redirect('/border')
+#         return HttpResponse('실패')
+#     elif request.method == 'GET':
+#         form = BorderForm()
+#         return render(request, 'border/border_new.html', {'form': form})
+#     else:
+#         pass
 
-def writing(request):
-    return render(request, 'border/photo.html')
+class BorderCreateView(CreateView):
+    model = Border
+    fields = ['title','author','text','photo']
+    success_url = 'border/border.html'
+    template_name = 'border/border_new.html'
 
 class BorderDeleteView(DeleteView):
     model = Border

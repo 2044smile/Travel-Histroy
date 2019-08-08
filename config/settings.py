@@ -23,9 +23,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = ')f+*i%&tvsv3)bc)uwuhu=-gu=0(e(jiyh_*sqj_m-q*ec-1m4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    # '.amazonaws.com',
+]
 
 
 # Application definition
@@ -126,22 +128,26 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
-AWS_ACCESS_KEY_ID = 'AKIA2AICUFBXH7U6MQ5C'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_REGION = 'ap-northeast-2'
+AWS_ACCESS_KEY_ID = 'AKIA2AICUFBXGN2UW4OL'
+AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'travelhistory'
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.%s.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME,AWS_REGION)
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
+AWS_LOCATION = 'static'
 
-DEFAULT_FILE_STORAGE = 'config.asset_storage.MediaStorage'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'config/static'),
+]
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# 로그인 이후 경로설정
+LOGIN_REDIRECT_URL = "/"
